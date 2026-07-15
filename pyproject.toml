@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-final-project"
+version = "0.1.0"
+description = "Python final project template: CLI + Streamlit personal data app"
+requires-python = ">=3.10"
+dependencies = [
+  "streamlit>=1.35",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "python-docx>=1.1",
+]
+
+[project.scripts]
+python-final-app = "final_project.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

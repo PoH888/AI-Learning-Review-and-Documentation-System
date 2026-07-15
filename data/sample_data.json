@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "完成 Week 10 作业",
+    "category": "学习",
+    "duration_minutes": 90,
+    "note": "复习 JSON 与序列化",
+    "created_at": "2026-05-14"
+  },
+  {
+    "id": 2,
+    "title": "整理 Python 大作业计划",
+    "category": "项目",
+    "duration_minutes": 120,
+    "note": "拆分 CLI、Streamlit、测试",
+    "created_at": "2026-05-14"
+  }
+]

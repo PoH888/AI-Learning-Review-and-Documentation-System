@@ -1,0 +1,9 @@
+student:
+  id: 请填写学号
+  name: 请填写姓名
+  class_name: 请填写班级
+project:
+  name: 请填写项目名称
+  topic: 请填写所选题目
+  repository_url: 请填写 Gitea 仓库地址
+  final_commit: 生成报告时自动读取当前提交，无需填写
