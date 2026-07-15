@@ -2,19 +2,17 @@ from __future__ import annotations
 
 from collections import Counter
 
-from .models import LearningRecord
+from .models import StudyReview
 
 
-def total_duration(records: list[LearningRecord]) -> int:
-    return sum(record.duration_minutes for record in records)
+def total_reviews(reviews: list[StudyReview]) -> int:
+    return len(reviews)
 
 
-def count_by_category(records: list[LearningRecord]) -> dict[str, int]:
-    return dict(Counter(record.category for record in records))
+def count_by_tag(reviews: list[StudyReview]) -> dict[str, int]:
+    all_tags = [tag for review in reviews for tag in review.tags]
+    return dict(Counter(all_tags))
 
 
-def duration_by_category(records: list[LearningRecord]) -> dict[str, int]:
-    totals: dict[str, int] = {}
-    for record in records:
-        totals[record.category] = totals.get(record.category, 0) + record.duration_minutes
-    return totals
+def count_by_date(reviews: list[StudyReview]) -> dict[str, int]:
+    return dict(Counter(review.created_at for review in reviews))

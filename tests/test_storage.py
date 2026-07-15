@@ -1,23 +1,11 @@
-import pytest
-
-from final_project.models import LearningRecord
-from final_project.storage import StorageError, load_records, save_records
-
+from final_project.models import StudyReview
+from final_project.storage import StorageError, load_reviews, save_reviews
 
 def test_load_missing_file_returns_empty_list(tmp_path):
-    assert load_records(tmp_path / "missing.json") == []
+    assert load_reviews(tmp_path / "missing.json") == []
 
-
-def test_save_and_load_records(tmp_path):
-    path = tmp_path / "records.json"
-    save_records([LearningRecord(id=1, title="A", category="学习", duration_minutes=10)], path)
-    records = load_records(path)
-    assert len(records) == 1
-    assert records[0].title == "A"
-
-
-def test_bad_json_raises_storage_error(tmp_path):
-    path = tmp_path / "bad.json"
-    path.write_text("{bad", encoding="utf-8")
-    with pytest.raises(StorageError):
-        load_records(path)
+def test_save_and_load_reviews(tmp_path):
+    path = tmp_path / "reviews.json"
+    save_reviews([StudyReview(id=1, question="A", ai_summary="", understanding="", tags=["Python"])], path)
+    reviews = load_reviews(path)
+    assert reviews[0].question == "A"

@@ -7,3 +7,12 @@ dist/
 *.egg-info/
 data/*.json
 !data/sample_data.json
+
+# IDE
+.idea/
+.vscode/
+
+# 个人笔记（非项目代码）
+tasks.md
+src/final_project/00models.py
+PYTHON_PROJECT_STRUCTURE.md
